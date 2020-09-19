@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Loan Calculator</title>
+	<link rel="stylesheet" type="text/css" href="loanStyling.css" />
+</head>
+<body>
+	<div class="menu" id = "taskbar">
+	  <a href="#home"><button type = "button">Home</button></a>
+	  <a href="https://www.facebook.com/profile.php?id=100005956621337"><button type = "button">My Facebook</button></a>
+	  <a href="https://twitter.com/GrantDong2"><button type = "button">My Twitter</button></a>
+	  <a href="https://www.thebalance.com/how-loans-work-315449"><button type = "button">More About Loans</button></a>
+	</div>
+	<h1 id = "title">The Loan Calculator: Be Responsible for Your Financial Future</h1>
+	<h2 id = "author">Created by Grant D. Dong</h2>
+	<div id = "functions">
+		<h4>Option 1: Calculate Your Monthly Bill</h4>
+		<br>
+		Amount to Borrow: <input type="number" id = "a1"></input>
+		<br>
+		Interest(percent): <input type="number" id = "a2"></input>
+		<br>
+		Duration(months): <input type="number" id = "a3"></input>
+		<br><br>
+		<button type="button" id = "button1">Calculate Monthly Payment</button>
+		<br><br>
+		<h4>Option 2: Calculate How Much You Can Borrow</h4>
+		<br>
+		Monthly Payment: <input type="number" id = "b1"></input>
+		<br>
+		Duration(months): <input type="number" id = "b2"</input>
+		<br>
+		Interest(percent): <input type="number" id = "b3"></input>
+		<br><br>
+		<button type="button" id = "button2">Calculate Maximum to Borrow</button>
+		<br><br>
+		<h4>Option 3: Calculate How Long To Pay Back Your Loan</h4>
+		<br>
+		Amount to Borrow: <input type="number" id = "c1"></input>
+		<br>
+		Interest(percent): <input type="number" id = "c2"></input>
+		<br>
+		Monthly Payment: <input type="number" id = "c3"></input>
+		<br><br>
+		<button type="button" id = "button3">Calculate Time to Pay Off</button>
+		<br><br><br>
+	</div>
+	<br><br>
+	<div id = "show">
+	<p id = "output">OUTPUT AREA</p>
+	</div>
+	<br>
+</body>
+	<script src="loan_code.js"></script>
+</html>
+
+
+

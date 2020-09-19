@@ -1,0 +1,60 @@
+import math
+def option1():
+    p = float(input("How much money will you borrow?(Enter an integer)-->"))
+    annual_interest = float(input("What is the interest rate?(Enter the percent)-->"))/100
+    n = float(input("How many months to pay back?(Enter an integer)-->"))
+    i = annual_interest / 12
+    if i == 0:
+        ans = p/n
+    else:
+        ans = i*p*(1+i)**n/((1+i)**n - 1)
+    total = ans * n
+    print("Your monthly pay will be $" + str(round(ans, 2)) + ".")
+    print("You've payed a total of $" + str(round(total, 2))+".")
+def option2():
+    m = float(input("What is your maximum monthly payment?(Enter an integer)-->"))
+    n = float(input("How many months do you have to pay back?(Enter an integer)-->"))
+    annual_interest = float(input("What is the assumed interest rate?(Enter the percent)-->"))/100
+    i = annual_interest / 12
+    if i == 0:
+        ans = m*n
+    else:
+        ans = m*((1+i)**n - 1)/(i*(1+i)**n)
+    print("The maximum amount you can borrow is $" + str(round(ans, 2))+".")
+def option3():
+    p = float(input("How much money will you borrow?(Enter an integer)-->"))
+    annual_interest = float(input("What is the assumed interest rate?(Enter the percent)-->"))/100
+    m = float(input("What is the monthly payment?(Enter an integer)-->"))
+    i = annual_interest / 12
+    if i*p >= m:
+        print("Cannot be calculated. Your monthly payment is too small to cover your loan's interest.")
+    else:
+        if i == 0:
+            ans = math.ceil(p/m)
+            last_payment = p - (ans - 1)*m
+            total = p
+        else:
+            ans = float(math.ceil(math.log10(-m / (i * p - m)) / math.log10(1 + i)))
+            last_payment = (p * (1 + i) ** (ans - 1) - m * ((1 + i) ** (ans - 1) - 1) / i) * (1 + i)
+            total = last_payment + m * (ans - 1)
+        print("You will pay off your loan in " + str(ans)+" months or in " + str(round(ans/12, 1)) + " years.")
+        print("Your last month payment will be $" + str(round(last_payment, 2)) + ".")
+        print("You've payed a total of $" + str(round(total, 2)) + ".")
+
+print("Welcome to the Loan Information Calculator")
+print("1. Calculate Monthly Pay")
+print("2. Calculate Maximum Amount to Borrow")
+print("3. Calculate Time to Pay Off")
+choice = int(input("Which would you like to do?(Please enter a number)-->"))
+if not choice == 1 and not choice == 2 and not choice == 3 and not choice == 0:
+    print("Sorry, the number you entered is not a valid option")
+else:
+    if choice == 1:
+        option1()
+    if choice == 2:
+        option2()
+    if choice == 3:
+        option3()
+
+
+
